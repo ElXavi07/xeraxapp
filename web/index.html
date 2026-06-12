@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Xerax Root guides unlocked Android devices through a verified, local rooting workflow."
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' http://127.0.0.1:47721; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>Xerax Root</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Xerax home">
+        <span class="brand-mark">X</span>
+        <span>Xerax</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#requirements">Requirements</a>
+        <a href="#safety">Safety</a>
+        <a href="#console">Console</a>
+      </nav>
+      <span class="local-status" id="header-status">
+        <span class="status-dot"></span>
+        Companion offline
+      </span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="availability">Windows companion preview</p>
+          <h1>Root your unlocked Android.</h1>
+          <p class="hero-text">
+            Connect your device, verify every safety check, and run a local,
+            auditable Magisk boot-image workflow.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#console">Open root console</a>
+            <a class="button button-secondary" href="#setup">Install companion</a>
+          </div>
+          <p class="trust-line">Commands run locally. Device data is never uploaded to Xerax.</p>
+        </div>
+
+        <div class="terminal-preview" aria-label="Example device check">
+          <div class="terminal-bar">
+            <span>Device readiness</span>
+            <span class="terminal-state">Local</span>
+          </div>
+          <pre><span class="muted">$</span> xerax check
+<span class="success">ok</span> platform-tools found
+<span class="success">ok</span> one device connected
+<span class="success">ok</span> bootloader unlocked
+<span class="warning">wait</span> patched image required
+
+No command runs without confirmation.</pre>
+        </div>
+      </section>
+
+      <section class="setup-section" id="setup">
+        <div class="section-heading">
+          <h2>Install once, then root locally</h2>
+          <p>
+            The companion connects the webpage to USB. Android Platform Tools come
+            directly from Google under Google’s SDK license.
+          </p>
+        </div>
+        <div class="setup-grid">
+          <article class="download-card">
+            <span class="step-number">Windows</span>
+            <h3>Xerax Root Companion</h3>
+            <p id="release-summary">Loading current release details...</p>
+            <a
+              class="button button-primary disabled-link"
+              id="companion-download"
+              href="#"
+              download
+              aria-disabled="true"
+            >
+              Download companion
+            </a>
+            <dl class="release-details">
+              <div><dt>Version</dt><dd id="release-version">-</dd></div>
+              <div><dt>SHA-256</dt><dd id="release-hash">-</dd></div>
+            </dl>
+          </article>
+          <article class="download-card">
+            <span class="step-number">Official dependency</span>
+            <h3>Android Platform Tools</h3>
+            <p>
+              Download the latest Windows package from Android Developers, accept
+              Google’s license, and place it on your PATH.
+            </p>
+            <a
+              class="button button-secondary"
+              href="https://developer.android.com/tools/releases/platform-tools"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open official download
+            </a>
+            <p class="small-note">Verified current release: 37.0.0, February 2026.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="requirements" id="requirements">
+        <div class="section-heading">
+          <h2>Three things before rooting</h2>
+          <p>Rooting changes the boot partition. Prepare the device before connecting it.</p>
+        </div>
+        <div class="requirement-grid">
+          <article>
+            <span class="step-number">01</span>
+            <h3>Unlock the bootloader</h3>
+            <p>The companion checks the reported unlock state and stops if it cannot verify it.</p>
+          </article>
+          <article>
+            <span class="step-number">02</span>
+            <h3>Back up your data</h3>
+            <p>Bootloader operations can erase the device. Keep a tested backup somewhere else.</p>
+          </article>
+          <article>
+            <span class="step-number">03</span>
+            <h3>Patch the matching image</h3>
+            <p>Use Magisk to patch the exact boot or init_boot image from your current firmware.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="console-section" id="console">
+        <div class="section-heading">
+          <h2>Root console</h2>
+          <p>The browser controls a companion on your computer. It cannot access ADB by itself.</p>
+        </div>
+
+        <div class="console-layout">
+          <aside class="workflow" aria-label="Root workflow">
+            <ol>
+              <li class="active" data-workflow-step="connect">
+                <span>1</span>
+                <div><strong>Connect</strong><small>Pair local companion</small></div>
+              </li>
+              <li data-workflow-step="inspect">
+                <span>2</span>
+                <div><strong>Inspect</strong><small>Read device state</small></div>
+              </li>
+              <li data-workflow-step="image">
+                <span>3</span>
+                <div><strong>Image</strong><small>Validate patched file</small></div>
+              </li>
+              <li data-workflow-step="confirm">
+                <span>4</span>
+                <div><strong>Confirm</strong><small>Review exact operation</small></div>
+              </li>
+            </ol>
+          </aside>
+
+          <div class="console-card">
+            <div class="console-toolbar">
+              <div>
+                <span class="status-dot"></span>
+                <strong id="connection-label">Waiting for companion</strong>
+              </div>
+              <button class="text-button" id="clear-log" type="button">Clear log</button>
+            </div>
+
+            <div class="pairing-panel" id="pairing-panel">
+              <label for="pairing-token">Pairing code</label>
+              <div class="inline-form">
+                <input
+                  id="pairing-token"
+                  type="password"
+                  inputmode="numeric"
+                  autocomplete="one-time-code"
+                  placeholder="6-digit code"
+                  maxlength="6"
+                />
+                <button class="button button-primary" id="connect-button" type="button">
+                  Connect
+                </button>
+              </div>
+              <p>Start the Xerax companion, then enter the code shown in its window.</p>
+            </div>
+
+            <div class="device-panel hidden" id="device-panel">
+              <dl class="device-details">
+                <div><dt>Connection</dt><dd id="device-mode">-</dd></div>
+                <div><dt>Serial</dt><dd id="device-serial">-</dd></div>
+                <div><dt>Model</dt><dd id="device-model">-</dd></div>
+                <div><dt>Product</dt><dd id="device-product">-</dd></div>
+                <div><dt>Android build</dt><dd id="device-build">-</dd></div>
+                <div><dt>Current slot</dt><dd id="device-slot">-</dd></div>
+                <div><dt>Verified boot</dt><dd id="verified-boot-state">-</dd></div>
+                <div><dt>Unlock state</dt><dd id="unlock-state">-</dd></div>
+                <div><dt>Profile</dt><dd id="profile-state">-</dd></div>
+              </dl>
+
+              <div class="tool-status" id="tool-status">
+                <strong>Platform Tools status</strong>
+                <span id="adb-status">adb: checking</span>
+                <span id="fastboot-status">fastboot: checking</span>
+              </div>
+
+              <div class="action-row">
+                <button class="button button-secondary" id="scan-button" type="button">
+                  Scan again
+                </button>
+              </div>
+
+              <div class="image-form">
+                <label for="boot-image">Magisk-patched image</label>
+                <input id="boot-image" type="file" accept=".img,application/octet-stream" />
+
+                <label for="partition">Target partition</label>
+                <select id="partition">
+                  <option value="init_boot">init_boot (many Android 13+ devices)</option>
+                  <option value="boot">boot</option>
+                </select>
+
+                <button class="button button-secondary" id="validate-button" type="button">
+                  Validate image
+                </button>
+              </div>
+
+              <div class="profile-panel" id="profile-panel">
+                <strong id="profile-title">No exact device profile</strong>
+                <p id="profile-detail">
+                  Xerax will require you to verify the target partition from device-specific
+                  documentation.
+                </p>
+              </div>
+
+              <div class="confirmation hidden" id="confirmation-panel">
+                <div class="warning-box">
+                  Flashing the wrong image can prevent booting. Confirm the firmware image matches
+                  this exact device and build.
+                </div>
+                <label for="serial-confirmation">
+                  Type device serial <strong id="serial-to-type"></strong>
+                </label>
+                <input id="serial-confirmation" type="text" autocomplete="off" />
+                <label class="checkbox-row">
+                  <input id="backup-confirmation" type="checkbox" />
+                  <span>I have a backup and understand this modifies the selected partition.</span>
+                </label>
+                <label class="checkbox-row">
+                  <input id="patched-confirmation" type="checkbox" />
+                  <span>Magisk created this patched image from my current firmware build.</span>
+                </label>
+                <label class="checkbox-row" id="partition-confirmation-row">
+                  <input id="partition-confirmation" type="checkbox" />
+                  <span>I verified the selected partition for this exact device and build.</span>
+                </label>
+                <button class="button button-danger" id="root-button" type="button" disabled>
+                  Flash patched image
+                </button>
+              </div>
+            </div>
+
+            <pre class="live-log" id="live-log" aria-live="polite">[xerax] Waiting for local companion...</pre>
+
+            <div class="troubleshooting-panel">
+              <div>
+                <strong>Boot-image troubleshooting</strong>
+                <p>
+                  Paste the exact extractor, ADB, fastboot, or Magisk error. Xerax
+                  matches reviewed failure patterns and will not execute suggested commands.
+                </p>
+              </div>
+              <label for="troubleshooting-code">Known symptom</label>
+              <select id="troubleshooting-code">
+                <option value="">Detect from pasted error</option>
+                <option value="adb_unauthorized">ADB says unauthorized</option>
+                <option value="incremental_ota">OTA extraction uses BROTLI_BSDIFF</option>
+                <option value="zero_byte_image">Extracted image is zero bytes</option>
+                <option value="fastboot_fetch_unsupported">Fastboot fetch is unsupported</option>
+                <option value="partition_read_denied">Partition read says permission denied</option>
+                <option value="slot_mismatch">Active slot or image slot differs</option>
+                <option value="magisk_setup_incomplete">Device boots but su is unavailable</option>
+                <option value="dsu_profile_required">Considering a DSU or GSI method</option>
+              </select>
+              <label for="troubleshooting-text">Exact error output</label>
+              <textarea
+                id="troubleshooting-text"
+                rows="4"
+                placeholder="Example: Unhandled operation type: BROTLI_BSDIFF"
+              ></textarea>
+              <button class="button button-secondary" id="diagnose-button" type="button">
+                Diagnose safely
+              </button>
+              <div class="diagnostic-results hidden" id="diagnostic-results"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="safety" id="safety">
+        <div>
+          <h2>Automation with hard stops.</h2>
+          <p>
+            Xerax refuses ambiguous device states, multiple connected devices, locked
+            bootloaders, invalid images, and unconfirmed serial numbers.
+          </p>
+        </div>
+        <ul>
+          <li>Local-only ADB and fastboot execution</li>
+          <li>Exact commands shown in the activity log</li>
+          <li>No AI-generated commands or silent fallbacks</li>
+          <li>Flashing disabled by default in the companion</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>Xerax Root preview</span>
+      <span>Use only on devices you own or are authorized to modify.</span>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

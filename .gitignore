@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.xerax/
+uploads/
+.env
+.env.*
+!.env.example
+build/
+dist/
+deploy/
+web/downloads/*.exe
+handoff/*.exe
+handoff/*.zip

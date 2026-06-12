@@ -1,0 +1,16 @@
+{
+    "schemaVersion":  1,
+    "version":  "0.3.0",
+    "platform":  "windows-x64",
+    "filename":  "XeraxRootCompanion-0.3.0-windows-x64.exe",
+    "url":  "./downloads/XeraxRootCompanion-0.3.0-windows-x64.exe",
+    "sha256":  "f1577e5344b87524e4b127b0d598916d1d7104c27185530398ff18edf0ac4325",
+    "size":  8834365,
+    "signed":  false,
+    "profileRevision":  "2026-06-11.1",
+    "platformTools":  {
+                          "bundled":  false,
+                          "verifiedVersion":  "37.0.0",
+                          "officialUrl":  "https://developer.android.com/tools/releases/platform-tools"
+                      }
+}
