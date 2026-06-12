@@ -1,0 +1,53 @@
+name: Feature proposal
+description: Propose a feature for the Xerax roadmap
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping shape Xerax. Explain the user problem before proposing an implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What Android modification or recovery problem should Xerax solve?
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Desired experience
+      description: What should the user see and what outcome should they receive?
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety and recovery considerations
+      description: What could fail, erase data, or leave the device unbootable?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Project area
+      options:
+        - Web terminal
+        - Local companion
+        - Codex automation
+        - Compatibility registry
+        - Recovery
+        - Simulation and testing
+        - Documentation or localization
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: authorization
+    attributes:
+      label: Responsible-use confirmation
+      options:
+        - label: This proposal is intended only for devices users own or are authorized to modify.
+          required: true

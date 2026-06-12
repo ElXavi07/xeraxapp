@@ -1,0 +1,63 @@
+name: Device support request
+description: Request investigation for an exact Android device and firmware
+title: "[Device]: "
+labels:
+  - device-support
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not post serial numbers, IMEIs, account details, credentials, proprietary firmware, or personal files.
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      placeholder: Google
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Exact model and codename
+      placeholder: Pixel 8 / shiba
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Android version and firmware build
+      placeholder: Android 16 / exact build number
+    validations:
+      required: true
+  - type: dropdown
+    id: bootloader
+    attributes:
+      label: Bootloader state
+      options:
+        - Locked, OEM unlocking available
+        - Locked, OEM unlocking unavailable
+        - Unlocked
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Desired root method or outcome
+      description: Include Magisk, KernelSU, APatch, recovery, unroot, or another goal.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized technical evidence
+      description: Include relevant errors or partition details with personal identifiers removed.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I own this device or am explicitly authorized to modify it.
+          required: true
+        - label: I understand that a request does not mean the device is currently supported.
+          required: true

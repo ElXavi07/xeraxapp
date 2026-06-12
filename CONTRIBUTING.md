@@ -3,6 +3,9 @@
 Thank you for helping make Android modification workflows more transparent and
 recoverable.
 
+See [ROADMAP.md](ROADMAP.md) for planned projects and [COMMUNITY.md](COMMUNITY.md)
+for contribution paths beyond code.
+
 ## Ground Rules
 
 - Work only with devices you own or are authorized to modify.
@@ -31,3 +34,10 @@ and recovery result, with personal identifiers removed.
 Explain the problem, the approach, verification performed, and any device-specific
 risk. Changes affecting flashing, partition selection, firmware matching, or
 unlock checks require especially careful tests and review.
+
+## Device Support Requests
+
+Use the device-support issue template. Provide exact model and firmware facts,
+but remove serial numbers, account information, personal files, and credentials.
+A request is not the same as a tested compatibility profile; physical evidence
+and maintainer review are required.
